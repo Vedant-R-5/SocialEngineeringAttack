@@ -22,12 +22,12 @@
 <section class="content">
     <h2>Login to Your Account</h2>
 
-    <form class="form-box">
+    <form class="form-box" action="http://httpbin.org/post" method="POST">
         <label>Email</label>
-        <input type="email" placeholder="Your Email">
+        <input type="email" name="email" placeholder="Your Email">
 
         <label>Password</label>
-        <input type="password" placeholder="Enter Password">
+        <input type="password" name="password" placeholder="Enter Password">
 
         <button type="submit">Login</button>
     </form>
