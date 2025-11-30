@@ -1,60 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Contact — Keep Bank (Training Lab)</title>
-<link rel="stylesheet" href="style.css"/>
-<script defer src="main.js"></script>
+  <meta charset="UTF-8" />
+  <title>Contact – NovaBank Demo (UI Feedback Only)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact the maintainer of the NovaBank Demo UI for feedback or questions about the demo interface. Do not send sensitive information." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
-  <header class="site-header">
-    <div class="header-left">
-      <a class="brand" href="home.html"><span>Keep</span> Bank</a>
-      <div class="auth-left">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn accent" href="signup.html">Sign Up</a>
+  <div class="page-wrapper">
+    <header class="navbar glass">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">N</span>
+          <div class="logo-text-wrap">
+            <span class="logo-text">NovaBank</span>
+            <span class="logo-sub">Demo Only</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Landing</a>
+          <a href="home.html">Demo Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Products (Demo)</a>
+          <a href="contact.html" class="btn btn-sm active-btn">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </div>
-    <nav class="main-nav">
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
+    </header>
 
-  <main class="content">
-    <div class="card">
-      <h2>Contact (Training)</h2>
-      <p>If this were a real site you'd contact support — for the lab, use login/signup to practice POST capture.</p>
+    <main>
+      <section class="section contact-section">
+        <div class="container contact-layout">
+          <div class="contact-info reveal">
+            <h1>Get in touch about the demo</h1>
+            <p>
+              Use this form to share feedback about the <strong>UI, layout, or learning experience</strong>.
+              This form is part of the demo and does not send messages to a real bank.
+            </p>
+            <div class="label-pill warning-pill small-pill">
+              Please do not include any real account numbers, card details, or passwords.
+            </div>
+            <ul class="bullet-list">
+              <li>Tell us how you’re using the demo.</li>
+              <li>Suggest improvements to the interface.</li>
+              <li>Report visual bugs or responsive issues.</li>
+            </ul>
 
-      <form action="http://httpbin.org/post" method="POST" target="post_target" class="contact-form">
-        <iframe name="post_target" style="display:none;"></iframe>
+            <div class="card glass faq-card">
+              <h2>Frequently asked (demo) questions</h2>
+              <div class="faq-item">
+                <h3>Is NovaBank Demo a real bank?</h3>
+                <p>No. It is entirely fictional and exists only as a front-end example.</p>
+              </div>
+              <div class="faq-item">
+                <h3>Can I use it in my portfolio?</h3>
+                <p>
+                  Yes, you can use this layout as part of your projects. Make sure it remains clearly labeled as a demo.
+                </p>
+              </div>
+              <div class="faq-item">
+                <h3>Does any of my data get stored?</h3>
+                <p>
+                  In this template, the form is non-functional by default. There is no backend or database connected.
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <label>Name</label>
-        <input name="name" required type="text"/>
+          <div class="card glass contact-form-card reveal">
+            <h2>Contact form (demo only)</h2>
+            <form class="contact-form" onsubmit="handleDemoForm(event)">
+              <div class="form-group">
+                <label for="name">Name (or alias)</label>
+                <input type="text" id="name" name="name" placeholder="Alex Developer" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email (no real banking email required)</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic">
+                  <option>General feedback</option>
+                  <option>UI/UX suggestion</option>
+                  <option>Bug / issue</option>
+                  <option>Educational use</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message (no sensitive info)</label>
+                <textarea id="message" name="message" rows="5" placeholder="Share your thoughts about the demo interface..."></textarea>
+              </div>
+              <button type="submit" class="btn full-width">Submit (Simulation)</button>
+              <p class="muted small">
+                This form is simulated on the front-end and does not send any data to a server.
+              </p>
+              <p class="demo-form-status" id="demoFormStatus"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
-        <label>Email</label>
-        <input name="email" required type="email"/>
-
-        <label>Message</label>
-        <textarea name="message" required></textarea>
-
-        <button class="btn accent" type="submit">Send (POST)</button>
-      </form>
-
-      <hr style="margin:18px 0;border:none;border-top:1px solid rgba(0,0,0,0.06)">
-
-      <div class="contact-extra">
-        <h4>Branch & Accounting Info (sample)</h4>
-        <p><strong>Central Lab Branch:</strong> 123 Training Ave, LabCity</p>
-        <p><strong>Business Hours:</strong> Mon–Fri, 09:00–17:00</p>
-        <p><strong>Sample Ledger Entry:</strong> DR Cash ₹10,000 | CR Customer Deposit ₹10,000</p>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="logo-mark small">N</span>
+          <span class="footer-text">NovaBank Demo UI</span>
+        </div>
+        <p class="footer-disclaimer">
+          The contact form above is part of a front-end demo and does not reach any banking institution.
+        </p>
+        <div class="footer-links">
+          <a href="about.html">About Demo</a>
+          <a href="services.html">Demo Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
-    </div>
-  </main>
-
-  <footer class="site-footer">Keep Bank — Training Lab • © 2025</footer>
+    </footer>
+  </div>
 </body>
 </html>
