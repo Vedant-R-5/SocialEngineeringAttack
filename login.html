@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustBank - Login</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Login — Keep Bank (Training Lab)</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="main.js"></script>
 </head>
-<body>
+<body class="page-auth">
 
-<header>
-    <h1>TrustBank</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html" class="highlight-btn">Sign Up</a>
+  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
+
+  <header class="site-header auth-header">
+    <div class="header-left">
+      <a class="brand" href="index.html"><span>Keep</span> Bank</a>
+      <div class="auth-left">
+        <a class="btn ghost" href="login.html">Login</a>
+        <a class="btn accent" href="signup.html">Sign Up</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
-</header>
+  </header>
 
-<section class="content">
-    <h2>Login to Your Account</h2>
+  <main class="content-center">
+    <div class="card form-card">
+      <h2>Practice Login</h2>
+      <p class="muted">This will POST over plain HTTP to httpbin.org (visible to Wireshark in your lab).</p>
 
-    <form class="form-box" action="http://httpbin.org/post" method="POST">
+      <!-- hidden iframe will receive the HTTP POST so the browser stays on the site -->
+      <iframe name="post_target" style="display:none;"></iframe>
+
+      <form id="loginForm" action="http://httpbin.org/post" method="POST" target="post_target" class="form">
         <label>Email</label>
-        <input type="email" name="email" placeholder="Your Email">
+        <input required name="email" type="email" placeholder="you@example.com" />
 
         <label>Password</label>
-        <input type="password" name="password" placeholder="Enter Password">
+        <input required name="password" type="password" placeholder="PracticePassword" />
 
-        <button type="submit">Login</button>
-    </form>
-</section>
+        <button class="btn accent" type="submit">Login (POST)</button>
+      </form>
 
-<footer>
-    <p>© 2025 TrustBank. All rights reserved.</p>
-</footer>
+      <p class="muted small">After pressing login, the POST will be sent (capture with Wireshark). You'll be automatically redirected to the site dashboard.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Keep Bank — Training Lab • © 2025</p>
+  </footer>
 
 </body>
 </html>
