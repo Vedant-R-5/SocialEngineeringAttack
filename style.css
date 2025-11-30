@@ -1,12 +1,14 @@
-/* style.css - modern, minimal, interactive */
+/* style.css - modern, minimal, interactive (updated full) */
 :root{
   --bg:#f5f7fb; --card:#ffffff; --accent:#0066ff; --accent-2:#ffb400;
   --muted:#6b7280; --dark:#0f1724;
   --glass: rgba(255,255,255,0.6);
 }
 
+/* base reset */
 *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Arial;}
-body{background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);color:var(--dark);min-height:100vh;}
+html,body{height:100%;}
+body{background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);color:var(--dark);min-height:100vh;line-height:1.45;}
 
 /* Training banner */
 .lab-banner{
@@ -17,15 +19,15 @@ body{background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);color:var(--da
 /* header */
 .site-header{
   display:flex;align-items:center;justify-content:space-between;padding:18px 36px;background:transparent;
-  gap:10px;
+  gap:10px;position:sticky;top:0;z-index:20;
 }
 .header-left{display:flex;align-items:center;gap:16px;}
 .brand{font-size:20px;font-weight:700;color:var(--dark);text-decoration:none;display:flex;align-items:center;gap:6px;}
-.brand span{color:var(--accent);}
+.brand span{color:var(--accent);transform:translateY(-1px);}
 
 /* left auth buttons (as requested) */
 .auth-left{display:flex;gap:8px;margin-left:12px;}
-.btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:600;transition:transform .18s ease,box-shadow .18s ease;}
+.btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:600;transition:transform .18s ease,box-shadow .18s ease,background .18s;}
 .btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(3,7,18,0.08);}
 .btn.ghost{background:transparent;border:1px solid rgba(15,23,36,0.06);color:var(--dark);}
 .btn.accent{background:linear-gradient(90deg,var(--accent),#2b8bff);color:white;box-shadow:0 8px 18px rgba(3,102,255,0.12);}
@@ -42,13 +44,24 @@ body{background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);color:var(--da
 @keyframes float{0%{transform:translateY(6px)}50%{transform:translateY(-6px)}100%{transform:translateY(6px)}}
 .hero-card h1{font-size:26px;margin-bottom:8px;}
 .hero-card p{color:var(--muted);margin-bottom:18px;}
-.cta-row{display:flex;gap:12px;}
+.cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+.features-brief{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+.feature h3{margin-bottom:6px;font-size:16px;}
+.feature p{color:var(--muted);font-size:13px;}
 
 /* floating cards */
 .floating-cards{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
-.small-card{background:linear-gradient(180deg,rgba(255,255,255,0.8),var(--glass));padding:14px 18px;border-radius:12px;box-shadow:0 8px 30px rgba(13,20,43,0.05);backdrop-filter: blur(6px);}
+.small-card{background:linear-gradient(180deg,rgba(255,255,255,0.8),var(--glass));padding:14px 18px;border-radius:12px;box-shadow:0 8px 30px rgba(13,20,43,0.05);backdrop-filter: blur(6px);font-weight:600;}
 
-/* content layout */
+/* info cards section */
+.info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:36px;}
+.card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 8px 28px rgba(3,7,18,0.06);transition:transform .22s ease,box-shadow .22s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(3,7,18,0.09);}
+.card h3{margin-bottom:10px;}
+.card ul{margin-left:18px;color:var(--muted);}
+
+/* content layout helpers */
+.content{padding:36px;}
 .content-center{display:flex;align-items:center;justify-content:center;padding:48px 20px;}
 .form-card{width:100%;max-width:520px;}
 .form{display:flex;flex-direction:column;gap:12px;margin-top:8px;}
@@ -56,111 +69,40 @@ body{background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);color:var(--da
 .form input,.form textarea{padding:12px;border-radius:10px;border:1px solid rgba(15,23,36,0.08);font-size:14px;}
 .form textarea{min-height:110px;resize:vertical;}
 
-/* cards and grid for dashboard */
-.card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 8px 28px rgba(3,7,18,0.06);}
-.welcome{margin:20px 0;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px;}
+/* dashboard grid */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px;}
+@media (max-width:1000px){ .grid{grid-template-columns:1fr;} .info-cards{grid-template-columns:1fr;} .features-brief{grid-template-columns:1fr;} .hero{grid-template-columns:1fr;} .main-nav{display:none;} }
+
+/* quick stats on dashboard */
+.quick-stats{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;}
+.stat{background:linear-gradient(180deg,#fff,#f8fbff);padding:12px;border-radius:10px;box-shadow:0 8px 22px rgba(2,6,23,0.03);width:160px;}
+.stat h4{margin-bottom:6px;font-size:14px;}
+.muted{color:var(--muted);font-size:13px;}
+.small{font-size:12px;color:var(--muted);}
+
+/* loan form */
+.loan-form{display:flex;flex-direction:column;gap:10px;}
+.loan-form input{padding:10px;border-radius:8px;border:1px solid rgba(15,23,36,0.08);}
+#loanResult{font-weight:700;color:var(--accent);}
+
+/* contact form (keeps your original structure) */
+.contact-form{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+.contact-form label{font-weight:600;color:var(--muted);font-size:13px;}
+.contact-form input, .contact-form textarea{
+  padding:12px;border-radius:10px;border:1px solid rgba(15,23,36,0.08);font-size:14px;background:#fff;
+}
+.contact-form textarea{min-height:110px;resize:vertical;}
+.contact-form .btn.accent{margin-top:8px;padding:10px 14px;border-radius:10px;}
 
 /* footer */
 .site-footer{padding:28px;text-align:center;color:var(--muted);margin-top:40px;}
 
-/* responsive */
-@media (max-width:880px){
-  .hero{grid-template-columns:1fr;padding:28px;}
-  .main-nav{display:none;}
-  .auth-left{margin-left:6px;}
-}
-.muted{color:var(--muted);font-size:13px;}
-.small{font-size:12px;color:var(--muted);}
+/* subtle shadows & hover lifts for interactive feel */
+.card .btn, .auth-left .btn {transition: transform .15s, box-shadow .15s;}
+.btn:hover{transform:translateY(-3px);}
 
-/* subtle hover effects */
-.card:hover{transform:translateY(-6px);transition:transform .22s ease,box-shadow .22s;}
+/* small utilities */
+hr{border:none;border-top:1px solid rgba(0,0,0,0.04);margin:16px 0;}
+a{color:inherit;}
 
-
-/* -------------------------------------------------
-   CONTACT SECTION ENHANCEMENTS (APPENDED ONLY)
-   ------------------------------------------------- */
-
-.contact-wrapper{
-  max-width: 700px;
-  margin: 60px auto;
-  padding: 32px;
-  background: var(--card);
-  border-radius: 18px;
-  box-shadow: 0 12px 40px rgba(2,6,23,0.07);
-  animation: fadeIn 0.6s ease;
-}
-
-.contact-wrapper h2{
-  text-align:center;
-  margin-bottom:14px;
-  font-size:28px;
-  font-weight:700;
-  color:var(--dark);
-}
-
-.contact-wrapper p{
-  text-align:center;
-  color:var(--muted);
-  margin-bottom:24px;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.contact-grid input,
-.contact-grid textarea{
-  border-radius:12px;
-  border:1px solid rgba(0,0,0,0.08);
-  padding:14px;
-  font-size:15px;
-  transition:border .2s, box-shadow .2s;
-}
-
-.contact-grid input:focus,
-.contact-grid textarea:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 4px rgba(3,102,255,0.15);
-}
-
-.contact-grid textarea{
-  grid-column: span 2;
-  min-height:130px;
-  resize:vertical;
-}
-
-.contact-btn{
-  margin-top:14px;
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  background:linear-gradient(90deg,var(--accent),#2b8bff);
-  border:none;
-  color:white;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-  transition:transform .2s ease,box-shadow .2s ease;
-}
-
-.contact-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 20px rgba(3,102,255,0.22);
-}
-
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-@media(max-width:700px){
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-  .contact-grid textarea{
-    grid-column: span 1;
-  }
-}
+@keyframes float { /* defined earlier but keep consistent */ 0%{transform:translateY(6px)}50%{transform:translateY(-6px)}100%{transform:translateY(6px)} }
