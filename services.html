@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo Products – NovaBank Demo (Not Real Banking)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore fictional banking-style products like demo checking, savings, and virtual cards for UI practice." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="navbar glass">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">N</span>
+          <div class="logo-text-wrap">
+            <span class="logo-text">NovaBank</span>
+            <span class="logo-sub">Demo Only</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Landing</a>
+          <a href="home.html">Demo Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Products (Demo)</a>
+          <a href="contact.html" class="btn btn-sm">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <h1>Fictional products for UI practice</h1>
+            <p>
+              The options below are <strong>not real financial products</strong>. They exist to help you build and demo
+              a professional-looking banking interface.
+            </p>
+          </div>
+
+          <div class="grid-3 services-grid">
+            <article class="card glass service-card reveal">
+              <h3>Everyday Account (Demo)</h3>
+              <p>
+                A typical current/checking account layout with balance, transactions, and basic controls.
+              </p>
+              <ul>
+                <li>Sample IBAN / account number formatting</li>
+                <li>Fake transaction list for UI demos</li>
+                <li>Balance and limit indicators</li>
+              </ul>
+              <p class="muted small">
+                Use this to showcase home dashboards and summary widgets.
+              </p>
+            </article>
+
+            <article class="card glass service-card reveal">
+              <h3>Savings Goals (Demo)</h3>
+              <p>
+                Goal-based savings visuals, using progress bars and timelines instead of real interest calculations.
+              </p>
+              <ul>
+                <li>Progress bars and goal percentages</li>
+                <li>Goal cards with statuses</li>
+                <li>Fake contribution schedule</li>
+              </ul>
+              <p class="muted small">
+                Ideal for testing charts, interactions, and motivational copy.
+              </p>
+            </article>
+
+            <article class="card glass service-card reveal">
+              <h3>Virtual Card (Demo)</h3>
+              <p>
+                A UI-only representation of a card that never touches real payment networks.
+              </p>
+              <ul>
+                <li>Card masking patterns</li>
+                <li>Design experiments (gradients, glass, etc.)</li>
+                <li>Lock/unlock toggle simulations</li>
+              </ul>
+              <p class="muted small">
+                Great for accessibility checks and hover/tap states.
+              </p>
+            </article>
+
+            <article class="card glass service-card reveal">
+              <h3>Loans Overview (Demo)</h3>
+              <p>
+                A simple mock loans page where you can show repayment schedules, but all numbers are fictional.
+              </p>
+              <ul>
+                <li>Monthly repayment tiles</li>
+                <li>Remaining balance progress</li>
+                <li>Sample interest rate labels</li>
+              </ul>
+              <p class="muted small">
+                Use to demonstrate complex financial layouts without real underwriting.
+              </p>
+            </article>
+
+            <article class="card glass service-card reveal">
+              <h3>Multi-currency Wallet (Demo)</h3>
+              <p>
+                Fake balances in multiple currencies to test currency switchers and responsive tables.
+              </p>
+              <ul>
+                <li>USD / EUR / GBP sample balances</li>
+                <li>Static “rate” indicators</li>
+                <li>Flag icons and currency labels</li>
+              </ul>
+              <p class="muted small">
+                Useful for localization and formatting practice.
+              </p>
+            </article>
+
+            <article class="card glass service-card reveal">
+              <h3>Notifications Center (Demo)</h3>
+              <p>
+                A notification feed UI that mimics typical banking alerts in a safe, fake environment.
+              </p>
+              <ul>
+                <li>Security alerts samples</li>
+                <li>Payment reminders</li>
+                <li>Marketing messages</li>
+              </ul>
+              <p class="muted small">
+                Practice filtering, grouping, and read/unread states.
+              </p>
+            </article>
+          </div>
+
+          <div class="card glass info-banner reveal">
+            <h2>Hook your own logic if needed</h2>
+            <p>
+              You can connect these demo products to your own front-end logic in <code>script.js</code> to animate
+              numbers, filter lists, or simulate flows. Just remember:
+            </p>
+            <ul class="bullet-list">
+              <li>Do <strong>not</strong> connect to real customer data.</li>
+              <li>Do <strong>not</strong> collect real banking credentials.</li>
+              <li>Keep “Demo / Sample / Fake” labeling visible.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="logo-mark small">N</span>
+          <span class="footer-text">NovaBank Demo UI</span>
+        </div>
+        <p class="footer-disclaimer">
+          All products described on this page are fictional. NovaBank Demo is not a provider of financial services.
+        </p>
+        <div class="footer-links">
+          <a href="about.html">About Demo</a>
+          <a href="services.html">Demo Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
