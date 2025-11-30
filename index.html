@@ -9,13 +9,11 @@
 </head>
 <body class="page-landing">
 
-  <!-- Training lab disclaimer (important) -->
   <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
 
   <header class="site-header">
     <div class="header-left">
       <a class="brand" href="index.html"><span>Keep</span> Bank</a>
-      <!-- login/signup on the left as you asked -->
       <div class="auth-left">
         <a class="btn ghost" href="login.html">Login</a>
         <a class="btn accent" href="signup.html">Sign Up</a>
@@ -31,20 +29,59 @@
 
   <main class="hero">
     <div class="hero-card">
-      <h1>Practice HTTP / POST capture</h1>
-      <p>Use this site to practise network capture with Wireshark. This is a training environment only.</p>
+      <h1>Practice Banking & Network Capture</h1>
+      <p>Welcome to Keep Bank — a fictional training environment for learning network forensics and social engineering safely.</p>
       <div class="cta-row">
         <a class="btn large accent" href="signup.html">Create Practice Account</a>
-        <a class="btn large ghost" href="login.html">Already have one? Login</a>
+        <a class="btn large ghost" href="login.html">Practice Login</a>
       </div>
+
+      <section class="features-brief">
+        <div class="feature">
+          <h3>Accounts & Savings</h3>
+          <p>Learn how account data flows; explore sample interest calculations and statements.</p>
+        </div>
+        <div class="feature">
+          <h3>Loans & Credit</h3>
+          <p>Interactive loan estimator to practise analyzing financial inputs.</p>
+        </div>
+        <div class="feature">
+          <h3>Security</h3>
+          <p>Understand why training on plain HTTP helps you study cleartext POST captures (lab only).</p>
+        </div>
+      </section>
     </div>
 
     <div class="floating-cards">
       <div class="small-card">Interactive forms</div>
-      <div class="small-card">Plain HTTP (for lab)</div>
+      <div class="small-card">Plain HTTP (lab)</div>
       <div class="small-card">Animations & hover effects</div>
     </div>
   </main>
+
+  <section class="info-cards">
+    <div class="card">
+      <h3>What to practise</h3>
+      <ul>
+        <li>Capturing HTTP POST packets (login/signup/contact forms)</li>
+        <li>Inspecting headers and request body in Wireshark</li>
+        <li>Comparing secure vs insecure flows (lab exercise)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Accounting info (sample)</h3>
+      <p>Sample account types: Checking, Savings, Fixed Deposit. Interest rates are illustrative only.</p>
+      <ul>
+        <li>Checking — instant access, 0.1% p.a.</li>
+        <li>Savings — flexible, 1.2% p.a.</li>
+        <li>Fixed Deposit — 1 year @ 4.0% p.a.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Support</h3>
+      <p>Contact the lab administrator or use the Contact page to POST sample messages.</p>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <p>Keep Bank — Training Lab • © 2025 — For Educational Purposes Only</p>
