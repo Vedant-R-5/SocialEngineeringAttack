@@ -1,42 +1,79 @@
-// main.js - used by pages to manage a tiny "session" and auto-redirect after POST
+// main.js - manage a tiny "session", loan calculator, and small UI tweaks
 document.addEventListener("DOMContentLoaded", ()=>{
 
-  // If a login/signup form exists, intercept submit to set a session after submission
-  const forms = document.querySelectorAll("form[target='post_target']");
-  forms.forEach(form=>{
+  // Intercept forms that post to httpbin (they use target post_target iframe) and set a dummy session
+  const postForms = document.querySelectorAll("form[action='http://httpbin.org/post']");
+  postForms.forEach(form=>{
     form.addEventListener("submit", e=>{
-      // Allow normal form submission to the hidden iframe (this creates the HTTP POST you capture)
-      // After submission, set a small timeout and mark "loggedIn" in localStorage then redirect to home.
-      // (We do not block the request — we let POST go to httpbin.)
+      // Allow normal form submission (POST to httpbin in hidden iframe).
+      // After initiating the POST, set a small local session and redirect to home.
       setTimeout(()=>{
-        // store a dummy session
         try{
-          const em = form.querySelector("input[name='email']")?.value || form.querySelector("input[name='fullname']")?.value || "learner@example.com";
+          const em = (form.querySelector("input[name='email']")?.value
+            || form.querySelector("input[name='fullname']")?.value
+            || form.querySelector("input[name='name']")?.value
+            || "learner@example.com");
           localStorage.setItem("kb_logged_in","true");
           localStorage.setItem("kb_user", em);
-        }catch(e){}
-        // redirect to home dashboard
+        }catch(err){}
+        // Redirect to dashboard
         window.location.href = "home.html";
-      }, 900); // quick delay to let the POST initiate
+      }, 800);
     });
   });
 
-  // On dashboard pages show logout + user
+  // Manage header buttons / logout visibility
   const logoutBtn = document.getElementById("logoutBtn");
-  const userInfo = document.getElementById("userInfo");
-  const userEmail = document.getElementById("userEmail");
+  const dummyUserBtn = document.getElementById("dummyUserBtn");
+  const dummySignupBtn = document.getElementById("dummySignupBtn");
+  const logged = localStorage.getItem("kb_logged_in");
+  const user = localStorage.getItem("kb_user");
+
   if(logoutBtn){
-    logoutBtn.addEventListener("click", ()=> {
+    if(logged){
+      logoutBtn.style.display = "inline-flex";
+      if(dummyUserBtn) dummyUserBtn.style.display = "none";
+      if(dummySignupBtn) dummySignupBtn.style.display = "none";
+    } else {
+      logoutBtn.style.display = "none";
+    }
+    logoutBtn.addEventListener("click", ()=>{
       localStorage.removeItem("kb_logged_in");
       localStorage.removeItem("kb_user");
       window.location.href = "index.html";
     });
   }
-  // display user info
-  const u = localStorage.getItem("kb_user");
-  if(u && userInfo && userEmail){
-    userEmail.textContent = u;
-    userInfo.style.display = "inline-block";
+
+  // Show user email in header if present
+  if(user){
+    // create a small user display
+    const headerLeft = document.querySelector(".header-left");
+    if(headerLeft && !document.getElementById("kbUserDisplay")){
+      const el = document.createElement("div");
+      el.id = "kbUserDisplay";
+      el.style.marginLeft = "10px";
+      el.style.fontWeight = "600";
+      el.style.color = "#3b3b3b";
+      el.textContent = `Signed in as ${user}`;
+      headerLeft.appendChild(el);
+    }
+  }
+
+  // Loan calculator
+  const calcBtn = document.getElementById("calcLoan");
+  if(calcBtn){
+    calcBtn.addEventListener("click", (ev)=>{
+      ev.preventDefault();
+      const P = parseFloat(document.getElementById("loanAmount").value) || 0;
+      const annualRate = parseFloat(document.getElementById("loanRate").value) || 0;
+      const years = parseFloat(document.getElementById("loanTerm").value) || 0;
+      if(P <= 0 || years <= 0){ document.getElementById("loanResult").textContent = "Enter valid values"; return; }
+      const r = annualRate/100/12;
+      const n = years*12;
+      const monthly = r === 0 ? (P / n) : (P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1));
+      const total = monthly * n;
+      document.getElementById("loanResult").textContent = `Monthly ≈ ₹${monthly.toFixed(2)} • Total ≈ ₹${total.toFixed(2)}`;
+    });
   }
 
 });
