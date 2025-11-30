@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Keep Bank — Dashboard (Training Lab)</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="main.js"></script>
+</head>
+<body class="page-dashboard">
+
+  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
+
+  <header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="home.html"><span>Keep</span> Bank</a>
+      <!-- after login, show a small user label (managed by JS) -->
+      <div id="userInfo" class="user-info" style="display:none">Welcome, <span id="userEmail"></span></div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="home.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="logoutBtn" class="btn ghost">Logout</button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="card welcome">
+      <h2>Dashboard — Practice Area</h2>
+      <p>Welcome to the Keep Bank training dashboard. Use the top-left Login/Signup (before login) to practice submitting credentials and capturing POST packets with Wireshark.</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Practice Task 1</h3>
+        <p>Open Wireshark and capture HTTP POST packets when you submit the login form.</p>
+      </div>
+      <div class="card">
+        <h3>Practice Task 2</h3>
+        <p>Observe the POST body and headers in the packet details.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Keep Bank — Training Lab • © 2025</p>
+  </footer>
+
+</body>
+</html>
