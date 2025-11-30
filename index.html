@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustBank - Home</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Keep Bank — Training Lab</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
 </head>
-<body>
+<body class="page-landing">
 
-<header>
-    <h1>TrustBank</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html" class="highlight-btn">Sign Up</a>
+  <!-- Training lab disclaimer (important) -->
+  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
+
+  <header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="index.html"><span>Keep</span> Bank</a>
+      <!-- login/signup on the left as you asked -->
+      <div class="auth-left">
+        <a class="btn ghost" href="login.html">Login</a>
+        <a class="btn accent" href="signup.html">Sign Up</a>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
-    <h2>Reliable Banking for a Secure Future</h2>
-    <p>Your money, our responsibility. Safe. Smart. Simple.</p>
-    <a href="signup.html"><button>Open an Account</button></a>
-</section>
+  <main class="hero">
+    <div class="hero-card">
+      <h1>Practice HTTP / POST capture</h1>
+      <p>Use this site to practise network capture with Wireshark. This is a training environment only.</p>
+      <div class="cta-row">
+        <a class="btn large accent" href="signup.html">Create Practice Account</a>
+        <a class="btn large ghost" href="login.html">Already have one? Login</a>
+      </div>
+    </div>
 
-<section class="features">
-    <div class="card">
-        <h3>Online Banking</h3>
-        <p>Manage your accounts anytime, anywhere.</p>
+    <div class="floating-cards">
+      <div class="small-card">Interactive forms</div>
+      <div class="small-card">Plain HTTP (for lab)</div>
+      <div class="small-card">Animations & hover effects</div>
     </div>
-    <div class="card">
-        <h3>Secure Payments</h3>
-        <p>Fast and secure transactions across the globe.</p>
-    </div>
-    <div class="card">
-        <h3>24/7 Support</h3>
-        <p>Our team is always available to help you.</p>
-    </div>
-</section>
+  </main>
 
-<footer>
-    <p>© 2025 TrustBank. All rights reserved.</p>
-</footer>
+  <footer class="site-footer">
+    <p>Keep Bank — Training Lab • © 2025 — For Educational Purposes Only</p>
+  </footer>
 
 </body>
 </html>
