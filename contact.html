@@ -1,43 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Contact — Keep Bank (Training Lab)</title>
-<link rel="stylesheet" href="style.css"/>
-<script defer src="main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MegaTrust Bank</title>
+    <link rel="stylesheet" href="contact.css">
 </head>
+
 <body>
-  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
-  <header class="site-header">
-    <div class="header-left">
-      <a class="brand" href="home.html"><span>Keep</span> Bank</a>
-      <div class="auth-left">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn accent" href="signup.html">Sign Up</a>
-      </div>
-    </div>
-    <nav class="main-nav">
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
 
-  <main class="content">
-    <div class="card">
-      <h2>Contact (Training)</h2>
-      <p>If this were a real site you'd contact support — for the lab, use login/signup to practice POST capture.</p>
-      <form action="http://httpbin.org/post" method="POST" target="post_target">
-        <iframe name="post_target" style="display:none;"></iframe>
-        <label>Name</label><input name="name" required type="text"/>
-        <label>Email</label><input name="email" required type="email"/>
-        <label>Message</label><textarea name="message" required></textarea>
-        <button class="btn accent" type="submit">Send (POST)</button>
-      </form>
-    </div>
-  </main>
+<header class="top-header">
+    <h1>MegaTrust Bank – Contact Us</h1>
+</header>
 
-  <footer class="site-footer">Keep Bank — Training Lab • © 2025</footer>
+<div class="contact-container fade-in">
+
+    <div class="contact-card">
+        <h2>Get in Touch</h2>
+        <p class="subtext">We're here to help you anytime.</p>
+
+        <form>
+            <div class="input-group">
+                <input type="text" required>
+                <label>Your Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" required>
+                <label>Your Email</label>
+            </div>
+
+            <div class="input-group">
+                <textarea rows="4" required></textarea>
+                <label>Your Message</label>
+            </div>
+
+            <button class="send-btn">Send Message</button>
+        </form>
+    </div>
+
+</div>
+
 </body>
 </html>
