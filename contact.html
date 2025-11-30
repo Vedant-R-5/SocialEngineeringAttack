@@ -1,42 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustBank - Contact</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact — Keep Bank (Training Lab)</title>
+<link rel="stylesheet" href="style.css"/>
+<script defer src="main.js"></script>
 </head>
 <body>
-
-<header>
-    <h1>TrustBank</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
+  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
+  <header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="home.html"><span>Keep</span> Bank</a>
+      <div class="auth-left">
+        <a class="btn ghost" href="login.html">Login</a>
+        <a class="btn accent" href="signup.html">Sign Up</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
-</header>
+  </header>
 
-<section class="content">
-    <h2>Contact Us</h2>
+  <main class="content">
+    <div class="card">
+      <h2>Contact (Training)</h2>
+      <p>If this were a real site you'd contact support — for the lab, use login/signup to practice POST capture.</p>
+      <form action="http://httpbin.org/post" method="POST" target="post_target">
+        <iframe name="post_target" style="display:none;"></iframe>
+        <label>Name</label><input name="name" required type="text"/>
+        <label>Email</label><input name="email" required type="email"/>
+        <label>Message</label><textarea name="message" required></textarea>
+        <button class="btn accent" type="submit">Send (POST)</button>
+      </form>
+    </div>
+  </main>
 
-    <form class="contact-form" action="http://httpbin.org/post" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Your Name">
-
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Your Email">
-
-        <label>Message</label>
-        <textarea name="message" placeholder="Your Message"></textarea>
-
-        <button type="submit">Submit</button>
-    </form>
-</section>
-
-<footer>
-    <p>© 2025 TrustBank. All rights reserved.</p>
-</footer>
-
+  <footer class="site-footer">Keep Bank — Training Lab • © 2025</footer>
 </body>
 </html>
