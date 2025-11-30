@@ -1,52 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>About — Keep Bank (Training Lab)</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="main.js"></script>
+  <meta charset="UTF-8" />
+  <title>About NovaBank Demo – Fictional Banking UI Only</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn what NovaBank Demo is and why it exists. A fictional bank interface for demos and training only." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
-
-  <header class="site-header">
-    <div class="header-left">
-      <a class="brand" href="home.html"><span>Keep</span> Bank</a>
-      <div class="auth-left">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn accent" href="signup.html">Sign Up</a>
+  <div class="page-wrapper">
+    <header class="navbar glass">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">N</span>
+          <div class="logo-text-wrap">
+            <span class="logo-text">NovaBank</span>
+            <span class="logo-sub">Demo Only</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Landing</a>
+          <a href="home.html">Demo Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="services.html">Products (Demo)</a>
+          <a href="contact.html" class="btn btn-sm">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </div>
-    <nav class="main-nav">
-      <a href="home.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    </header>
 
-  <main class="content">
-    <div class="card">
-      <h2>About Keep Bank — Training Lab</h2>
-      <p>Keep Bank is a fictional institution used solely for educational exercises in networking and security labs. Below is example accounting/banking information you can reference during your practicals.</p>
+    <main>
+      <section class="section">
+        <div class="container about-layout">
+          <div class="about-content reveal">
+            <h1>What is NovaBank Demo?</h1>
+            <p>
+              NovaBank Demo is a <strong>fictional online banking interface</strong> built purely for UI/UX practice,
+              portfolio projects, and training sessions. It is <strong>not</strong> a bank, does not belong to a real bank,
+              and cannot be used to manage real money.
+            </p>
+            <p>
+              The goal is to give developers and designers a modern, realistic banking UI to work with, without any risk of
+              exposing real financial data, login credentials, or production systems.
+            </p>
 
-      <h3>Sample Products & Accounting Concepts</h3>
-      <ul>
-        <li><strong>Accounts:</strong> Checking, Savings, Fixed Deposits — basic ledger behavior and flows.</li>
-        <li><strong>Interest:</strong> Periodic crediting, simple vs compound interest (illustrative rates shown).</li>
-        <li><strong>Loans:</strong> Amortization schedules, principal vs interest, monthly payment calculations.</li>
-        <li><strong>Statements:</strong> Transaction entries, running balance, debit/credit conventions.</li>
-      </ul>
+            <h2>Why this matters</h2>
+            <ul class="bullet-list">
+              <li><strong>Security first:</strong> No real credentials, no real accounts, no integration with payment networks.</li>
+              <li><strong>Clear labeling:</strong> Phrases like “Demo”, “Sample”, and “Fake Data” appear throughout the interface.</li>
+              <li><strong>Educational focus:</strong> Perfect for classroom use, portfolio projects, and coding bootcamps.</li>
+            </ul>
 
-      <h3>Why this helps your lab</h3>
-      <p>Using this mock site you can safely practice capturing HTTP POST requests, understanding where credentials and form data appear in network packets, and comparing that to secure channels (HTTPS) in a controlled setting.</p>
-    </div>
-  </main>
+            <h2>How you can use it</h2>
+            <ul class="bullet-list">
+              <li>As a front-end exercise: add new screens, charts, or animations.</li>
+              <li>To practice responsive design and accessibility in a banking-style UI.</li>
+              <li>To demonstrate security best practices (e.g., never trust demo sites with real data).</li>
+            </ul>
+          </div>
 
-  <footer class="site-footer">
-    <p>Keep Bank — Training Lab • © 2025</p>
-  </footer>
+          <aside class="about-aside reveal">
+            <div class="card glass">
+              <h3>Important disclaimer</h3>
+              <p>
+                NovaBank Demo:
+              </p>
+              <ul class="bullet-list">
+                <li>Is <strong>not</strong> licensed as a bank or financial institution.</li>
+                <li>Does <strong>not</strong> accept deposits or process withdrawals.</li>
+                <li>Does <strong>not</strong> issue real cards, loans, or accounts.</li>
+              </ul>
+              <p class="muted small">
+                Any resemblance to real banks or apps is unintentional and used solely to illustrate common UX patterns.
+              </p>
+            </div>
 
+            <div class="card glass">
+              <h3>Tech stack (front-end only)</h3>
+              <ul class="bullet-list">
+                <li>HTML5 for semantic structure</li>
+                <li>CSS3 with gradients & glassmorphism</li>
+                <li>Vanilla JavaScript for animations & reveal effects</li>
+              </ul>
+              <p class="muted small">
+                You are encouraged to fork this layout and integrate your own front-end experimentation.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="logo-mark small">N</span>
+          <span class="footer-text">NovaBank Demo UI</span>
+        </div>
+        <p class="footer-disclaimer">
+          NovaBank Demo is a made-up brand used only for UI/UX demonstrations. It does not represent a real bank.
+        </p>
+        <div class="footer-links">
+          <a href="about.html">About Demo</a>
+          <a href="services.html">Demo Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
