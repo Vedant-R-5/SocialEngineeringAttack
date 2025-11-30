@@ -1,81 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Keep Bank — Dashboard (Training Lab)</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="main.js"></script>
+  <meta charset="UTF-8" />
+  <title>NovaBank Demo – Dashboard Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A dummy online banking dashboard for practice. All balances and transactions are fake." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body class="page-dashboard">
-
-  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
-
-  <header class="site-header">
-    <div class="header-left">
-      <a class="brand" href="home.html"><span>Keep</span> Bank</a>
-      <div id="userControls" class="auth-left">
-        <a class="btn ghost" id="dummyUserBtn" href="login.html">Login</a>
-        <a class="btn accent" id="dummySignupBtn" href="signup.html">Sign Up</a>
+<body>
+  <div class="page-wrapper">
+    <header class="navbar glass">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">N</span>
+          <div class="logo-text-wrap">
+            <span class="logo-text">NovaBank</span>
+            <span class="logo-sub">Demo Only</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Landing</a>
+          <a href="home.html" class="active">Demo Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Products (Demo)</a>
+          <a href="contact.html" class="btn btn-sm">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </div>
+    </header>
 
-    <nav class="main-nav">
-      <a href="home.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <button id="logoutBtn" class="btn ghost" style="display:none">Logout</button>
-    </nav>
-  </header>
+    <main>
+      <section class="section dashboard-hero">
+        <div class="container">
+          <div class="section-header reveal">
+            <h1>Demo banking dashboard</h1>
+            <p>
+              This page simulates what a simple online banking home screen might look like.
+              All data is fake and for display only.
+            </p>
+            <div class="label-pill warning-pill small-pill">
+              Do not enter real card, account, or login information anywhere.
+            </div>
+          </div>
 
-  <main class="content">
-    <section class="card welcome">
-      <h2>Dashboard — Practice Area</h2>
-      <p>Welcome to the Keep Bank training dashboard. Use the top-left Login/Signup (before login) to practice submitting credentials and capturing POST packets with Wireshark.</p>
-      <div class="quick-stats">
-        <div class="stat">
-          <h4>Accounts</h4>
-          <p>Checking • Savings • Fixed Deposit</p>
+          <!-- Top cards -->
+          <div class="grid-3 dashboard-cards">
+            <article class="card glass dashboard-card reveal">
+              <h3>Main Account</h3>
+              <p class="muted">Everyday spending (demo)</p>
+              <div class="dash-amount">$12,480.32</div>
+              <div class="dash-meta-row">
+                <span>Ending in •••• 4021</span>
+                <span class="chip chip-positive">+ $320.15 today</span>
+              </div>
+            </article>
+
+            <article class="card glass dashboard-card reveal">
+              <h3>Savings Vault</h3>
+              <p class="muted">Rainy day fund (demo)</p>
+              <div class="dash-amount">$5,200.00</div>
+              <div class="dash-progress">
+                <div class="dash-progress-bar">
+                  <span style="width: 64%;"></span>
+                </div>
+                <div class="dash-progress-labels">
+                  <span>Goal: $8,000</span>
+                  <span>64% reached</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card glass dashboard-card reveal">
+              <h3>Virtual Card</h3>
+              <p class="muted">Online payments only (demo)</p>
+              <div class="virtual-card">
+                <div class="virtual-chip"></div>
+                <div class="virtual-number">**** **** **** 9024</div>
+                <div class="virtual-footer">
+                  <span>Nova User</span>
+                  <span>12/28</span>
+                </div>
+              </div>
+              <div class="dash-meta-row">
+                <span class="chip chip-neutral">Simulation Mode</span>
+                <span class="status-pill">Card UI Only</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Layout: Transactions + Quick actions -->
+          <div class="dashboard-layout">
+            <div class="card glass dashboard-panel reveal">
+              <div class="panel-header">
+                <h2>Recent activity (fake data)</h2>
+                <span class="muted">No real transactions are processed here.</span>
+              </div>
+              <ul class="transaction-list">
+                <li>
+                  <div>
+                    <span class="tx-title">Groceries • DemoMart</span>
+                    <span class="tx-meta">Today · Everyday Account</span>
+                  </div>
+                  <div class="tx-amount negative">− $68.40</div>
+                </li>
+                <li>
+                  <div>
+                    <span class="tx-title">Salary • NovaTech Inc.</span>
+                    <span class="tx-meta">Today · Incoming</span>
+                  </div>
+                  <div class="tx-amount positive">+ $2,400.00</div>
+                </li>
+                <li>
+                  <div>
+                    <span class="tx-title">Savings transfer</span>
+                    <span class="tx-meta">Yesterday · to Savings Vault</span>
+                  </div>
+                  <div class="tx-amount negative">− $300.00</div>
+                </li>
+                <li>
+                  <div>
+                    <span class="tx-title">Coffee • Bean Box</span>
+                    <span class="tx-meta">26 Mar · Card •••• 9024</span>
+                  </div>
+                  <div class="tx-amount negative">− $4.80</div>
+                </li>
+                <li>
+                  <div>
+                    <span class="tx-title">Streaming • FlixZone</span>
+                    <span class="tx-meta">25 Mar · Subscription</span>
+                  </div>
+                  <div class="tx-amount negative">− $12.99</div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="dashboard-side">
+              <div class="card glass dashboard-panel reveal">
+                <div class="panel-header">
+                  <h2>Quick demo actions</h2>
+                  <span class="muted">
+                    These buttons do not perform real transfers. Use them to simulate flows in demos.
+                  </span>
+                </div>
+                <div class="quick-actions">
+                  <button class="btn full-width fake-action-btn">Simulate transfer</button>
+                  <button class="btn ghost full-width fake-action-btn">Fake bill payment</button>
+                  <button class="btn ghost full-width fake-action-btn">Show card lock UI</button>
+                </div>
+                <p class="muted small">
+                  Tip: You can hook these buttons to your own front-end logic in <code>script.js</code> for practice.
+                </p>
+              </div>
+
+              <div class="card glass dashboard-panel reveal">
+                <div class="panel-header">
+                  <h2>Security reminder</h2>
+                </div>
+                <ul class="bullet-list">
+                  <li>This site is not connected to any real bank.</li>
+                  <li>Never enter real banking passwords, OTPs, or card numbers on demo sites.</li>
+                  <li>Use this interface for UI and UX training only.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="stat">
-          <h4>Avg. Savings Rate</h4>
-          <p>1.2% p.a. (illustrative)</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="logo-mark small">N</span>
+          <span class="footer-text">NovaBank Demo UI</span>
         </div>
-        <div class="stat">
-          <h4>Support</h4>
-          <p>lab-support@example.local</p>
+        <p class="footer-disclaimer">
+          All balances, transactions, and account information shown here are <strong>fake</strong>.
+          This website does not provide financial services or connect to any bank systems.
+        </p>
+        <div class="footer-links">
+          <a href="about.html">About Demo</a>
+          <a href="services.html">Demo Products</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
-    </section>
-
-    <section class="grid">
-      <div class="card">
-        <h3>Account Types</h3>
-        <p><strong>Checking:</strong> Instant access, low interest — suitable for daily transactions.</p>
-        <p><strong>Savings:</strong> Flexible access, moderate interest — good for emergency funds.</p>
-        <p><strong>Fixed Deposit:</strong> Higher rate for locked terms (example: 1 year @ 4.0% p.a.).</p>
-      </div>
-
-      <div class="card">
-        <h3>Loan Estimator (interactive)</h3>
-        <p>Try different loan amounts and terms for a quick monthly payment estimate.</p>
-        <div class="loan-form">
-          <label>Loan amount (₹)</label>
-          <input id="loanAmount" type="number" value="500000" />
-          <label>Annual interest (%)</label>
-          <input id="loanRate" type="number" step="0.01" value="8.5" />
-          <label>Term (years)</label>
-          <input id="loanTerm" type="number" value="5" />
-          <button class="btn accent" id="calcLoan">Estimate</button>
-          <p class="muted" id="loanResult"></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Keep Bank — Training Lab • © 2025</p>
-  </footer>
-
+    </footer>
+  </div>
 </body>
 </html>
