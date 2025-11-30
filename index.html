@@ -1,91 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Keep Bank — Training Lab</title>
+  <meta charset="UTF-8" />
+  <title>NovaBank Demo – Safe Training Banking UI (Not a Real Bank)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NovaBank Demo is a fictional banking interface for educational and UI demonstration purposes only. No real banking or payments." />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body class="page-landing">
-
-  <div class="lab-banner">⚠️ TRAINING LAB — NOT A REAL BANK — For educational use only</div>
-
-  <header class="site-header">
-    <div class="header-left">
-      <a class="brand" href="index.html"><span>Keep</span> Bank</a>
-      <div class="auth-left">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn accent" href="signup.html">Sign Up</a>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation -->
+    <header class="navbar glass">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">N</span>
+          <div class="logo-text-wrap">
+            <span class="logo-text">NovaBank</span>
+            <span class="logo-sub">Demo Only</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" class="active">Landing</a>
+          <a href="home.html">Demo Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Products (Demo)</a>
+          <a href="contact.html" class="btn btn-sm">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </div>
+    </header>
 
-    <nav class="main-nav">
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <main>
+      <!-- Hero -->
+      <section class="hero-section">
+        <div class="container hero-inner">
+          <div class="hero-content reveal">
+            <div class="label-pill warning-pill">
+              ⚠ Demo Interface Only – Not a Real Bank
+            </div>
+            <h1>Practice modern <span class="gradient-text">digital banking</span> safely.</h1>
+            <p>
+              NovaBank Demo is a fictional online banking dashboard created for learning, testing, and UI practice.
+              It does <strong>not</strong> connect to any real accounts, real money, or real financial services.
+            </p>
+            <div class="hero-actions">
+              <a href="home.html" class="btn">Open Demo Dashboard</a>
+              <a href="about.html" class="btn ghost">Learn How It Works</a>
+            </div>
+            <div class="hero-meta">
+              <div>
+                <h3>100% Fake</h3>
+                <p>Safe training data</p>
+              </div>
+              <div>
+                <h3>UI Focus</h3>
+                <p>Front-end only</p>
+              </div>
+              <div>
+                <h3>No Risk</h3>
+                <p>No real payments</p>
+              </div>
+            </div>
+          </div>
 
-  <main class="hero">
-    <div class="hero-card">
-      <h1>Practice Banking & Network Capture</h1>
-      <p>Welcome to Keep Bank — a fictional training environment for learning network forensics and social engineering safely.</p>
-      <div class="cta-row">
-        <a class="btn large accent" href="signup.html">Create Practice Account</a>
-        <a class="btn large ghost" href="login.html">Practice Login</a>
-      </div>
-
-      <section class="features-brief">
-        <div class="feature">
-          <h3>Accounts & Savings</h3>
-          <p>Learn how account data flows; explore sample interest calculations and statements.</p>
-        </div>
-        <div class="feature">
-          <h3>Loans & Credit</h3>
-          <p>Interactive loan estimator to practise analyzing financial inputs.</p>
-        </div>
-        <div class="feature">
-          <h3>Security</h3>
-          <p>Understand why training on plain HTTP helps you study cleartext POST captures (lab only).</p>
+          <div class="hero-visual reveal">
+            <div class="hero-card glass">
+              <div class="hero-badge">Demo Balance Overview</div>
+              <div class="demo-balance">
+                <div>
+                  <span class="label">Main Account</span>
+                  <span class="amount">$12,480.32</span>
+                </div>
+                <div>
+                  <span class="label">Savings Vault</span>
+                  <span class="amount">$5,200.00</span>
+                </div>
+                <div class="chip-row">
+                  <span class="chip chip-positive">+ $320.15 Today</span>
+                  <span class="chip chip-neutral">Simulation Mode</span>
+                </div>
+              </div>
+              <div class="chart-placeholder"></div>
+              <div class="hero-card-footer">
+                <span>Sample transaction graph</span>
+                <span class="status-pill">No real data</span>
+              </div>
+            </div>
+            <div class="floating-tag tag-1 glass-small">
+              <span class="dot"></span> Perfect for UI practice
+            </div>
+            <div class="floating-tag tag-2 glass-small">
+              <span class="dot"></span> Front-end only sandbox
+            </div>
+          </div>
         </div>
       </section>
-    </div>
 
-    <div class="floating-cards">
-      <div class="small-card">Interactive forms</div>
-      <div class="small-card">Plain HTTP (lab)</div>
-      <div class="small-card">Animations & hover effects</div>
-    </div>
-  </main>
+      <!-- Features -->
+      <section class="section padding-xl" id="features">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Designed for developers, trainers, and learners</h2>
+            <p>
+              Use NovaBank Demo to showcase layouts, test responsiveness, and explain banking UX without touching real money.
+            </p>
+          </div>
+          <div class="grid-3 features-grid">
+            <article class="card feature-card glass reveal">
+              <div class="icon-circle">
+                <span>🧪</span>
+              </div>
+              <h3>Safe experimentation</h3>
+              <p>
+                Try flows like transfers, card management, and account switching visually – with zero connection to actual banking APIs.
+              </p>
+            </article>
 
-  <section class="info-cards">
-    <div class="card">
-      <h3>What to practise</h3>
-      <ul>
-        <li>Capturing HTTP POST packets (login/signup/contact forms)</li>
-        <li>Inspecting headers and request body in Wireshark</li>
-        <li>Comparing secure vs insecure flows (lab exercise)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Accounting info (sample)</h3>
-      <p>Sample account types: Checking, Savings, Fixed Deposit. Interest rates are illustrative only.</p>
-      <ul>
-        <li>Checking — instant access, 0.1% p.a.</li>
-        <li>Savings — flexible, 1.2% p.a.</li>
-        <li>Fixed Deposit — 1 year @ 4.0% p.a.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Support</h3>
-      <p>Contact the lab administrator or use the Contact page to POST sample messages.</p>
-    </div>
-  </section>
+            <article class="card feature-card glass reveal">
+              <div class="icon-circle">
+                <span>📱</span>
+              </div>
+              <h3>Fully responsive</h3>
+              <p>
+                Practice mobile, tablet, and desktop layouts using a realistic, modern banking theme and clean design system.
+              </p>
+            </article>
 
-  <footer class="site-footer">
-    <p>Keep Bank — Training Lab • © 2025 — For Educational Purposes Only</p>
-  </footer>
+            <article class="card feature-card glass reveal">
+              <div class="icon-circle">
+                <span>🎓</span>
+              </div>
+              <h3>Training-friendly</h3>
+              <p>
+                Ideal for classroom demos, security awareness, and UX workshops – clearly labeled as a fake / dummy bank.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
+      <!-- Services Preview -->
+      <section class="section services-preview">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Dummy products for realistic scenarios</h2>
+            <p>
+              All “products” below are fictional and exist only to help you visualize a modern digital banking interface.
+            </p>
+          </div>
+          <div class="grid-3 services-grid">
+            <article class="card glass service-card reveal">
+              <h3>Everyday Account (Demo)</h3>
+              <p>
+                A standard checking-style account UI for simulating payments, transfers, and daily banking on screen.
+              </p>
+              <ul>
+                <li>Fake account number styling</li>
+                <li>Example transaction lists</li>
+                <li>Balance & limit indicators</li>
+              </ul>
+              <a href="services.html" class="link-arrow">View fake products</a>
+            </article>
+
+            <article class="card glass service-card reveal">
+              <h3>Savings Goals (Demo)</h3>
+              <p>
+                Create pretend goals and see how progress bars and charts can communicate savings visually.
+              </p>
+              <ul>
+                <li>Goal progress UI</li>
+                <li>Sample contribution history</li>
+                <li>Motivational labels only</li>
+              </ul>
+              <a href="services.html" class="link-arrow">Explore demo goals</a>
+            </article>
+
+            <article class="card glass service-card reveal">
+              <h3>Virtual Card (Demo)</h3>
+              <p>
+                A stylish card component to experiment with masking, toggles, and responsive card layouts.
+              </p>
+              <ul>
+                <li>Masked card numbers</li>
+                <li>On/off status badges</li>
+                <li>Customizable colors</li>
+              </ul>
+              <a href="services.html" class="link-arrow">See card UI</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials + Pricing (Demo) -->
+      <section class="section testimonials-section">
+        <div class="container split-layout">
+          <div class="testimonials reveal">
+            <h2>Used in mockups & portfolio projects</h2>
+            <p class="subtitle">
+              Designers and developers use NovaBank Demo to present banking-style interfaces without implying any real financial service.
+            </p>
+            <div class="testimonial-card glass">
+              <p>
+                “This dummy bank UI helped me build a strong portfolio project. It’s clearly fake, but looks close enough to real apps
+                to feel professional.”
+              </p>
+              <div class="testimonial-meta">
+                <span class="name">Alex Rivera</span>
+                <span class="role">Front-end Developer (Student Project)</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card glass">
+              <p>
+                “Perfect for training new hires on banking workflows without granting access to production systems or even test accounts.”
+              </p>
+              <div class="testimonial-meta">
+                <span class="name">Jordan Lee</span>
+                <span class="role">UX Trainer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing reveal">
+            <h2>Completely free to use</h2>
+            <p class="subtitle">
+              It’s just static front-end code. Clone it, customize it, and host it for demos.
+            </p>
+            <div class="card pricing-card glass">
+              <div class="pricing-price">
+                <span class="price">$0</span>
+                <span class="tag">Forever</span>
+              </div>
+              <ul class="pricing-list">
+                <li>✔ No sign-up or login</li>
+                <li>✔ No real payments or transfers</li>
+                <li>✔ Safe to use for practice</li>
+                <li>✔ Easily customizable layout</li>
+              </ul>
+              <a href="home.html" class="btn full-width">View Demo Dashboard</a>
+              <p class="pricing-note">
+                Reminder: This is <strong>not</strong> a financial institution and does not offer any banking services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="logo-mark small">N</span>
+          <span class="footer-text">NovaBank Demo UI</span>
+        </div>
+        <p class="footer-disclaimer">
+          This website is a <strong>fictional banking interface</strong> for educational and demonstration purposes only.
+          It does <strong>not</strong> provide real banking, payments, or financial products. Do not enter real account numbers,
+          card details, or passwords.
+        </p>
+        <div class="footer-links">
+          <a href="about.html">About Demo</a>
+          <a href="services.html">Demo Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
